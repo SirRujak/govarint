@@ -11,7 +11,7 @@ type Decode struct {
 	Bytes uint
 }
 
-func (decoder *Decode) read(buf []byte, offsetTemp *uint) (uint, error) {
+func (decoder *Decode) Decode(buf []byte, offsetTemp *uint) (uint, error) {
 	var res, offset, shift, counter, l uint
 	var b byte
 	res = 0
