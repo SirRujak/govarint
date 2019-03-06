@@ -14,7 +14,7 @@ func (encoder *Encode) Encode(num uint, outTemp *([]byte), offsetTemp *uint) ([]
 	encodingLength = Length(num)
 	var out []byte
 	if outTemp != nil {
-		if len(outTemp) < encodingLength {
+		if uint(len(*outTemp)) < encodingLength {
 			return out, errors.New("byte slice is not large enough to hold new varint")
 		}
 		out = *outTemp
